@@ -1,5 +1,9 @@
 package org.example;
 
+import com.google.gson.Gson;
+import org.example.Answer;
+import org.example.Shoes;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,8 +11,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
 
 public class ClientHandler implements Runnable {
     private Socket clientSocket;
@@ -55,7 +57,7 @@ public class ClientHandler implements Runnable {
                     manShoes.add(shoe);
                 }
             }
-            Answer answer = new Answer(true, gson.toJson(manShoes));
+            Answer answer = new Answer(true, manShoes);
             return answer.asJSON();
         } else if ("for_woman".equals(cmd)) {
             List<Shoes> womanShoes = new ArrayList<>();
@@ -64,17 +66,17 @@ public class ClientHandler implements Runnable {
                     womanShoes.add(shoe);
                 }
             }
-            Answer answer = new Answer(true, gson.toJson(womanShoes));
+            Answer answer = new Answer(true, womanShoes);
             return answer.asJSON();
         } else if ("sorted_by_name".equals(cmd)) {
             List<Shoes> sortedShoes = new ArrayList<>(shoes);
             sortShoesByName(sortedShoes);
-            Answer answer = new Answer(true, gson.toJson(sortedShoes));
+            Answer answer = new Answer(true, sortedShoes);
             return answer.asJSON();
         } else if ("sorted_by_price".equals(cmd)) {
             List<Shoes> sortedShoes = new ArrayList<>(shoes);
             sortShoesByPrice(sortedShoes);
-            Answer answer = new Answer(true, gson.toJson(sortedShoes));
+            Answer answer = new Answer(true, sortedShoes);
             return answer.asJSON();
         } else {
             Answer answer = new Answer(false, "Comando non valido.");
@@ -105,5 +107,4 @@ public class ClientHandler implements Runnable {
             }
         }
     }
-
 }

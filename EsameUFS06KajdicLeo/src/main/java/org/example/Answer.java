@@ -4,11 +4,11 @@ import com.google.gson.Gson;
 
 public class Answer {
     private Boolean result;
-    private String message;
+    private Object data;
 
-    public Answer(Boolean result, String message) {
+    public Answer(Boolean result, Object data) {
         this.result = result;
-        this.message = message;
+        this.data = data;
     }
 
     public Boolean getResult() {
@@ -19,12 +19,12 @@ public class Answer {
         this.result = result;
     }
 
-    public String getMessage() {
-        return message;
+    public Object getData() {
+        return data;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setData(Object data) {
+        this.data = data;
     }
 
     public String asJSON() {
