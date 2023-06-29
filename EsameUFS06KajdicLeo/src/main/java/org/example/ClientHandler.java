@@ -32,7 +32,8 @@ public class ClientHandler implements Runnable {
                 String cmd = in.readLine();
                 System.out.println(cmd);
 
-                if (cmd == null) {
+                if (cmd == null || cmd.equals("exit")) {
+                    System.out.println("Server chiuso");
                     break;
                 }
 

@@ -10,9 +10,6 @@ public class Server {
     static int portNumber = 1234;
     static List<Shoes> shoes = new ArrayList<Shoes>();
 
-    static {
-        buildList();
-    }
 
     static void buildList() {
         shoes.add(new Shoes(13,"Woman shoes for winter",225.94, "woman"));
@@ -22,6 +19,8 @@ public class Server {
     }
 
     public static void main(String[] args) {
+
+        buildList();
         System.out.println("Server in ascolto sulla porta: " + portNumber);
         try {
             ServerSocket serverSocket = new ServerSocket(portNumber);
