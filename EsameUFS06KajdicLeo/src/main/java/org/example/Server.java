@@ -15,13 +15,14 @@ public class Server {
     }
 
     static void buildList() {
-        shoes.add(new Shoes(13,"Man shoes for winter",225.94, "woman"));
+        shoes.add(new Shoes(13,"Woman shoes for winter",225.94, "woman"));
         shoes.add(new Shoes(14,"Football shoes 2009",133.0, "man"));
         shoes.add(new Shoes(124,"Black ceremony shoes Walch 2018",423.0, "man"));
         System.out.println(shoes);
     }
 
     public static void main(String[] args) {
+        System.out.println("Server in ascolto sulla porta: " + portNumber);
         try {
             ServerSocket serverSocket = new ServerSocket(portNumber);
 
@@ -32,7 +33,8 @@ public class Server {
                 thread.start();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Connessione fallita");
+            //e.printStackTrace();
         }
     }
 }
