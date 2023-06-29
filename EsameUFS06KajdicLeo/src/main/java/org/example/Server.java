@@ -15,7 +15,7 @@ public class Server {
     }
 
     static void buildList() {
-        shoes.add(new Shoes(13,"man shoes for winter",225.94, "woman"));
+        shoes.add(new Shoes(13,"Man shoes for winter",225.94, "woman"));
         shoes.add(new Shoes(14,"Football shoes 2009",133.0, "man"));
         shoes.add(new Shoes(124,"Black ceremony shoes Walch 2018",423.0, "man"));
         System.out.println(shoes);
