@@ -3,7 +3,7 @@ Esame UFS06 Kajdic Leo
 
 Traccia: B
 
-Indirizzo IP / Porta: 192.168.154.93 1234
+Indirizzo IP / Porta: 192.168.154.135 1234
 
 Comandi:
 
