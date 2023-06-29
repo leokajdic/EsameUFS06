@@ -16,3 +16,5 @@ Comandi:
 - sorted_by_name
 
 - sorted_by_price (In ordine crescente)
+
+- exit (per uscire)
